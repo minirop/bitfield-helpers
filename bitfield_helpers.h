@@ -61,7 +61,7 @@ constexpr size_t sum_v = sum<X...>::value;
 template<size_t N>
 struct next_size
 {
-	//static_assert(N > 0 && N <= 64);
+	static_assert(N > 0 && N <= 64);
 	static constexpr size_t value = size_if_v<(N < 9), 8,
 										size_if_v<(N < 17), 16,
 											size_if_v<(N < 33), 32, 64>>>;
